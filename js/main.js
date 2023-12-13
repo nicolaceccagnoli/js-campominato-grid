@@ -38,22 +38,23 @@ myButton.addEventListener('click', function(){
     }  else {
 
         // Definisco una Variabile con la quale prendo il Valore delle Option della Select
-        const difficultLevel = (document.getElementById('difficult-level').value);
+        let difficultLevel = parseInt(document.getElementById('difficult-level').value);
         console.log('difficultLevel', difficultLevel, typeof difficultLevel);
 
+        let level = difficultLevel;
 
-        cellGenerator (containerGrid);
+
+        cellGenerator (containerGrid, level);
         play = true;
     }
 
-   
 })
 
 
 // Creo la funzione che generi il contenitore
-function cellGenerator (div) {
+function cellGenerator (div, level) {
     // Creo un Ciclo per cui vengono generate 100 celle
-    for(let i = 1; i <= 100; i++){
+    for(let i = 1; i <= level; i++){
         // Definisco una Variabile con la quale creo la Cella da inserire nel Container
         const cell = document.createElement('div');
         console.log('cell', cell, typeof cell);

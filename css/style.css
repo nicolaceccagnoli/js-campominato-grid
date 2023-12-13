@@ -41,7 +41,6 @@ header {
 
 .container-grid {
     height: calc(100%- 120px);
-    background-color: rgb(23, 23, 179);
     display: flex;
     flex-wrap: wrap;
 }
