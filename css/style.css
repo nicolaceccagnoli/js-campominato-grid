@@ -31,3 +31,13 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container-grid {
+    height: 100vh;
+    background-color: rgb(23, 23, 179);
+}
+
+.cell {
+    height: 10%;
+    width: 10%;
+    background-color: gold;
+}
