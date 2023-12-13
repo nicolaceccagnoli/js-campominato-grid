@@ -34,10 +34,15 @@ html{
 .container-grid {
     height: 100vh;
     background-color: rgb(23, 23, 179);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .cell {
     height: 10%;
     width: 10%;
     background-color: gold;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 100px;
 }
