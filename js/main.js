@@ -29,30 +29,27 @@ let play = false;
 // Creo l'evento per cui le celle si generano al click del Bottone
 myButton.addEventListener('click', function(){
 
+    play = true;
+
     // Creo la condizione che mi controlli lo stato dell'interruttore
-    if (play) {
+    if (play == true) {
 
         containerGrid.innerHTML = '';
-        play = false;
 
-    }  else {
+    } 
 
-        // Definisco una Variabile con la quale prendo il Valore delle Option della Select
-        let difficultLevel = parseInt(document.getElementById('difficult-level').value);
-        console.log('difficultLevel', difficultLevel, typeof difficultLevel);
+    // Definisco una Variabile con la quale prendo il Valore delle Option della Select
+    let difficultLevel = (document.getElementById('difficult-level').value);
+    console.log('difficultLevel', difficultLevel, typeof difficultLevel);
 
-        let level = difficultLevel;
-
-
-        cellGenerator (containerGrid, level);
-        play = true;
-    }
-
+    // Utilizzo la funzione per generare le cell usando come argomenti le mie Variabili
+    cellGenerator (containerGrid, difficultLevel);
+ 
 })
 
 
 // Creo la funzione che generi il contenitore
-function cellGenerator (div, level) {
+function cellGenerator (div, level, difficult) {
     // Creo un Ciclo per cui vengono generate 100 celle
     for(let i = 1; i <= level; i++){
         // Definisco una Variabile con la quale creo la Cella da inserire nel Container
@@ -68,6 +65,21 @@ function cellGenerator (div, level) {
         // "Appendo" la Cella al Contenitore 
         div.append(cell);
 
+        if (level == 100) {
+
+            cell.classList.add('easy');
+    
+        } else if (level == 81) {
+    
+            cell.classList.add('medium');
+    
+        } else {
+    
+            cell.classList.add('hard');
+    
+        } 
+    
+
         // Aggiungo l'evento click alle celle per cui viene cambiato lo sfondo
         cell.addEventListener('click', function(){
             cell.classList.toggle('active');
@@ -76,5 +88,4 @@ function cellGenerator (div, level) {
     }  
     
 }
-
 

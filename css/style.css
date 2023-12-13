@@ -37,6 +37,7 @@ main{
 
 header {
     height: 60px;
+    line-height: 60px;
 }
 
 .container-grid {
@@ -47,7 +48,6 @@ header {
 
 .cell {
     height: 80px;
-    width: 10%;
     background-color: gold;
     border: 1px solid black;
     text-align: center;
@@ -60,4 +60,16 @@ header {
 
 footer {
     height: 60px;
+}
+
+.easy{
+    width:10%;
+}
+
+.medium{
+    width: calc(100% / 9);
+}
+
+.hard{
+    width: 20%;
 }
