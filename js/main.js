@@ -12,33 +12,45 @@
 const myButton = document.querySelector('button');
 console.log('myButton', myButton, typeof myButton);
 
+// Definisco una Variabile con la quale prendo il Container dall'HTML
+const containerGrid = document.querySelector('.container-grid');
+console.log('containerGrid', containerGrid, typeof containerGrid);
+
+
+let play = false;
+
 // Creo l'evento per cui le celle si generano al click del Bottone
 myButton.addEventListener('click', function(){
-    // Creo un Ciclo per cui vengono generate 100 celle
-    for(let i = 1; i <= 100; i++){
-        // Definisco una Variabile con la quale prendo il Container dall'HTML
-        const containerGrid = document.querySelector('.container-grid');
-        console.log('containerGrid', containerGrid, typeof containerGrid);
 
-        // Definisco una Variabile con la quale creo la Cella da inserire nel Container
-        const cell = document.createElement('div');
-        console.log('cell', cell, typeof cell);
+    if (play) {
 
-        // Assegno alle celle la classe che gli da lo stile
-        cell.classList.add('cell');
+        containerGrid.innerHTML = '';
+        play = false;
 
-        // Stampo all'interno delle celle il numero progressivo corrispondente
-        cell.innerHTML = i;
+    }  else {
+        // Creo un Ciclo per cui vengono generate 100 celle
+        for(let i = 1; i <= 100; i++){
+            // Definisco una Variabile con la quale creo la Cella da inserire nel Container
+            const cell = document.createElement('div');
+            console.log('cell', cell, typeof cell);
 
-        // "Appendo" la Cella al Contenitore 
-        containerGrid.append(cell);
+            // Assegno alle celle la classe che gli da lo stile
+            cell.classList.add('cell');
 
-        // Aggiungo l'evento click alle celle per cui viene cambiato lo sfondo
-        cell.addEventListener('click', function(){
-            cell.classList.toggle('active');
-            console.log(this.click)
-        })
+            // Stampo all'interno delle celle il numero progressivo corrispondente
+            cell.innerHTML = i;
 
+            // "Appendo" la Cella al Contenitore 
+            containerGrid.append(cell);
+
+            // Aggiungo l'evento click alle celle per cui viene cambiato lo sfondo
+            cell.addEventListener('click', function(){
+                cell.classList.toggle('active');
+                console.log(this.click)
+            })
+        }  
+
+        play = true;
     }
 })
 
