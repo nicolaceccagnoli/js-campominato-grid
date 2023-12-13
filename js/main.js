@@ -27,5 +27,11 @@ for(let i = 1; i <= 100; i++){
     // "Appendo" la Cella al Contenitore 
     containerGrid.append(cell);
 
+    // Aggiungo l'evento click alle celle per cui viene cambiato lo sfondo
+    cell.addEventListener('click', function(){
+        cell.classList.toggle('active');
+        console.log(this.click)
+    })
+
 }
 
