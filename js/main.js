@@ -12,30 +12,34 @@
 const myButton = document.querySelector('button');
 console.log('myButton', myButton, typeof myButton);
 
-// Creo un Ciclo per cui vengono generate 100 celle
-for(let i = 1; i <= 100; i++){
-    // Definisco una Variabile con la quale prendo il Container dall'HTML
-    const containerGrid = document.querySelector('.container-grid');
-    console.log('containerGrid', containerGrid, typeof containerGrid);
+// Creo l'evento per cui le celle si generano al click del Bottone
+myButton.addEventListener('click', function(){
+    // Creo un Ciclo per cui vengono generate 100 celle
+    for(let i = 1; i <= 100; i++){
+        // Definisco una Variabile con la quale prendo il Container dall'HTML
+        const containerGrid = document.querySelector('.container-grid');
+        console.log('containerGrid', containerGrid, typeof containerGrid);
 
-    // Definisco una Variabile con la quale creo la Cella da inserire nel Container
-    const cell = document.createElement('div');
-    console.log('cell', cell, typeof cell);
+        // Definisco una Variabile con la quale creo la Cella da inserire nel Container
+        const cell = document.createElement('div');
+        console.log('cell', cell, typeof cell);
 
-    // Assegno alle celle la classe che gli da lo stile
-    cell.classList.add('cell');
+        // Assegno alle celle la classe che gli da lo stile
+        cell.classList.add('cell');
 
-    // Stampo all'interno delle celle il numero progressivo corrispondente
-    cell.innerHTML = i;
+        // Stampo all'interno delle celle il numero progressivo corrispondente
+        cell.innerHTML = i;
 
-    // "Appendo" la Cella al Contenitore 
-    containerGrid.append(cell);
+        // "Appendo" la Cella al Contenitore 
+        containerGrid.append(cell);
 
-    // Aggiungo l'evento click alle celle per cui viene cambiato lo sfondo
-    cell.addEventListener('click', function(){
-        cell.classList.toggle('active');
-        console.log(this.click)
-    })
+        // Aggiungo l'evento click alle celle per cui viene cambiato lo sfondo
+        cell.addEventListener('click', function(){
+            cell.classList.toggle('active');
+            console.log(this.click)
+        })
 
-}
+    }
+})
+
 
