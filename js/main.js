@@ -8,6 +8,10 @@
 
 */
 
+// Definisco in una Variabile il bottone per giocare
+const myButton = document.querySelector('button');
+console.log('myButton', myButton, typeof myButton);
+
 // Creo un Ciclo per cui vengono generate 100 celle
 for(let i = 1; i <= 100; i++){
     // Definisco una Variabile con la quale prendo il Container dall'HTML
