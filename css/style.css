@@ -47,15 +47,17 @@ header {
 }
 
 .cell {
-    height: 80px;
+    height: 50px;
     background-color: gold;
     border: 1px solid black;
     text-align: center;
-    line-height: 80px;
+    line-height: 50px;
 }
 
 .cell.active{
-    background-color: lightblue;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    border: 1px solid white;
 }
 
 footer {

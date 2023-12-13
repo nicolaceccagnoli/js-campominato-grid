@@ -39,7 +39,7 @@ myButton.addEventListener('click', function(){
     } 
 
     // Definisco una Variabile con la quale prendo il Valore delle Option della Select
-    let difficultLevel = (document.getElementById('difficult-level').value);
+    let difficultLevel = parseInt(document.getElementById('difficult-level').value);
     console.log('difficultLevel', difficultLevel, typeof difficultLevel);
 
     // Utilizzo la funzione per generare le cell usando come argomenti le mie Variabili
@@ -49,7 +49,7 @@ myButton.addEventListener('click', function(){
 
 
 // Creo la funzione che generi il contenitore
-function cellGenerator (div, level, difficult) {
+function cellGenerator (div, level) {
     // Creo un Ciclo per cui vengono generate 100 celle
     for(let i = 1; i <= level; i++){
         // Definisco una Variabile con la quale creo la Cella da inserire nel Container
@@ -88,4 +88,3 @@ function cellGenerator (div, level, difficult) {
     }  
     
 }
-
