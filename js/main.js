@@ -6,6 +6,13 @@
     -- 2) Saranno 10 righe da 10 caselle;
     -- 3) Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emette un messaggio in console con il numero della cella cliccata.
 
+    BONUS
+    Il giocatore deve avere la possibilità di controllare il numero di celle che vengono generate
+    Tramite una select l'utente seleziona il livello di difficoltà e in base a quello vengono generate le celle:
+
+        - Difficoltà 1 ==> 100 Celle;
+        - Difficoltà 2 ==> 81 Celle;
+        - Difficoltà 3 ==> 49 Celle. 
 */
 
 // Definisco in una Variabile il bottone per giocare
@@ -29,6 +36,11 @@ myButton.addEventListener('click', function(){
         play = false;
 
     }  else {
+
+        // Definisco una Variabile con la quale prendo il Valore delle Option della Select
+        const difficultLevel = (document.getElementById('difficult-level').value);
+        console.log('difficultLevel', difficultLevel, typeof difficultLevel);
+
 
         cellGenerator (containerGrid);
         play = true;
